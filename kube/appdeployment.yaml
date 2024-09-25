@@ -1,2 +1,29 @@
 apiVersion: apps/v1
-kind
+kind: Deployment
+metadata:
+  name: jenkindemo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkindemo
+  template:
+    metadata:
+      labels:
+        app: jenkindemo
+    spec:
+      containers:
+        - name: app
+          image: gshukla123/jenkindemoapp:latest
+          ports:
+            - containerPort: 8082
+          env:
+            #- name: MONGO_URL
+             # value: mongodb://mongo:27017/dev
+            #- name: MINIO_ACCESS_KEY
+             # value: mykey
+            #- name: MINIO_SECRET_KEY
+             # value: mysecret
+            #- name: MINIO_HOST
+             # value: minio
+          imagePullPolicy: Always
