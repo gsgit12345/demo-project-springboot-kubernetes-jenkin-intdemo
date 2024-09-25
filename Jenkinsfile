@@ -8,7 +8,7 @@ pipeline {
         stage('build-dockerimage') {
             steps {
                 echo 'Hello World building the dockerimage'
-                sh 'docker build -t gshukla123/jenkindemoapp:${DOCKER_TAG}'
+                sh 'docker build -t gshukla123/jenkindemoapp:${DOCKER_TAG} .'
             }
         }
 
