@@ -8,6 +8,7 @@ pipeline {
         stage('build-dockerimage') {
             steps {
                 echo 'Hello World building the dockerimage'
+                sh 'sudo usermod -a -G docker jenkins'
                 sh 'docker build . -t gshukla123/jenkindemoapp:${DOCKER_TAG}'
             }
         }
