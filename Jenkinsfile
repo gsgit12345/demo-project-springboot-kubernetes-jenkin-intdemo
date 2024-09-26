@@ -12,8 +12,19 @@ pipeline {
                 sh 'docker build . -t gshukla123/jenkindemoapp:${DOCKER_TAG}'
             }
         }
-
     }
+    stages {
+            stage('Push-docker-image') {
+                steps {
+                withCredentials([string(credentialsId: 'dockercred', variable: 'dockerpwd')]) {
+                sh 'docker login -u gshukla123 -p ${dockerpwd}'
+                 sh 'docker push gshukla123/jenkindemoapp:${DOCKER_TAG}'
+
+                }
+
+                }
+            }
+        }
 }
 
 def  getDockerTag()
