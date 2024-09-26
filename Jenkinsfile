@@ -12,7 +12,7 @@ pipeline {
                 sh 'docker build . -t gshukla123/jenkindemoapp:${DOCKER_TAG}'
             }
         }
-    }
+
 
           stage('Push-docker-image') {
                 steps {
@@ -25,6 +25,7 @@ pipeline {
                 }
 
         }
+     }
 }
 
 def  getDockerTag()
