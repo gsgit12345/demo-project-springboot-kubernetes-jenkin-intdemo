@@ -13,8 +13,8 @@ pipeline {
             }
         }
     }
-    stages {
-            stage('Push-docker-image') {
+
+          stage('Push-docker-image') {
                 steps {
                 withCredentials([string(credentialsId: 'dockercred', variable: 'dockerpwd')]) {
                 sh 'docker login -u gshukla123 -p ${dockerpwd}'
@@ -23,7 +23,7 @@ pipeline {
                 }
 
                 }
-            }
+
         }
 }
 
