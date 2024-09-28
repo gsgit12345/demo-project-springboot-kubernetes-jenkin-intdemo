@@ -8,6 +8,8 @@ pipeline {
             stage('MANEN-BUILD') {
                 steps {
                     sh '''
+                   export MAVEN_HOME=/usr/local/apache-maven
+                    export PATH=$PATH:$MAVEN_HOME/bin
                    mvn --version
                    mvn clean package
                    '''
