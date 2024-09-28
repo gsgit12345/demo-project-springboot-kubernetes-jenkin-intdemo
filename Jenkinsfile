@@ -43,6 +43,8 @@ pipeline {
                sh 'pwd'
                sh 'chmod +x changeTag.sh'
                sh './changeTag.sh ${DOCKER_TAG}'
+               sh 'ls -a'
+               sh 'pwd'
                sh 'kubectl apply -f .'
              //  sh 'kubectl apply -f service.yaml'
            }catch(error)
