@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: gshukla123/jenkindemoapp:latest
+          image: gshukla123/jenkindemoapp:${tagVersion}
           ports:
             - containerPort: 8082
           env:

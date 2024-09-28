@@ -43,12 +43,12 @@ pipeline {
                sh 'pwd'
                sh 'chmod +x changeTag.sh'
                sh './changeTag.sh ${DOCKER_TAG}'
-               sh 'kubectl apply -f apppod.yaml'
-               sh 'kubectl apply -f service.yaml'
+               sh 'kubectl apply -f .'
+             //  sh 'kubectl apply -f service.yaml'
            }catch(error)
               {
-               sh 'kubectl create -f apppod.yaml'
-               sh 'kubectl apply -f service.yaml'
+               sh 'kubectl create -f .'
+              // sh 'kubectl apply -f service.yaml'
              }
            }
           }
