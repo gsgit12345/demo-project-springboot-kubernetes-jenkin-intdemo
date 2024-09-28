@@ -36,12 +36,12 @@ pipeline {
               steps {
               sh 'pwd'
               sh 'ls -a'
-              sh 'chmod +x kube'
                sh 'cd kube/'
                sh 'ls -a'
                script{
                try
                {
+               sh 'pwd'
                sh 'kubectl apply -f appdeployment.yaml'
                sh 'kubectl apply -f service.yaml'
                }catch(error)
