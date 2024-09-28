@@ -5,6 +5,14 @@ pipeline {
                 DOCKER_TAG=getDockerTag()
             }
     stages {
+            stage('MANEN-BUILD') {
+                steps {
+                    sh '''
+                   mvn --version
+                   mvn clean package
+                   '''
+                }
+            }
         stage('build-dockerimage') {
             steps {
                 echo 'Hello World building the dockerimage'
@@ -13,8 +21,6 @@ pipeline {
                 sh 'docker build . -t gshukla123/jenkindemoapp:${DOCKER_TAG}'
             }
         }
-
-
           stage('Push-docker-image') {
                 steps {
                 withCredentials([string(credentialsId: 'dockercred', variable: 'dockerpwd')]) {
