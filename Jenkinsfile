@@ -30,10 +30,22 @@ pipeline {
                  sh 'docker push gshukla123/jenkindemoapp:${DOCKER_TAG}'
 
                 }
-
-                }
-
+            }
         }
+        stage('Deploy Kubernetes') {
+              steps {
+
+               sh 'cd /kube'
+               try
+               {
+               sh 'kubectl apply -f .'
+               }catch(error)
+               {
+              sh 'kubectl create -f .'
+               }
+
+                    }
+                }
      }
 }
 
