@@ -58,6 +58,7 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
           <mainClass>com.tutorial.jenkin.DemoKubernetesJenkinApp</mainClass>
+          <layout>JAR</layout>
         </configuration>
         <executions>
           <execution>
