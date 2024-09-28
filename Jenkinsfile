@@ -11,7 +11,7 @@ pipeline {
                    export MAVEN_HOME=/usr/local/apache-maven
                     export PATH=$PATH:$MAVEN_HOME/bin
                    mvn --version
-                   mvn clean package
+                   mvn package spring-boot:repackage
                    '''
                 }
             }
