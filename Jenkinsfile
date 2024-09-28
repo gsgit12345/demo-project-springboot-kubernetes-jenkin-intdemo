@@ -37,7 +37,7 @@ pipeline {
               sh 'pwd'
               sh 'ls -a'
               sh 'chmod +x kube'
-               sh 'cd /kube'
+               sh 'cd kube/'
                script{
                try
                {
