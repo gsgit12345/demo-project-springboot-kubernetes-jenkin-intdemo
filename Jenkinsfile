@@ -38,14 +38,16 @@ pipeline {
               sh 'ls -a'
               sh 'chmod +x kube'
                sh 'cd kube/'
-               sh 'pwd'
+               sh 'ls -a'
                script{
                try
                {
-               sh 'kubectl apply -f .'
+               sh 'kubectl apply -f appdeployment.yaml'
+               sh 'kubectl apply -f service.yaml'
                }catch(error)
                {
-               sh 'kubectl create -f .'
+               sh 'kubectl create -f appdeployment.yaml'
+               sh 'kubectl apply -f service.yaml'
                }
                }
               }
