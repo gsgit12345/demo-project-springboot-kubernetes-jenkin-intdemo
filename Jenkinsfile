@@ -34,16 +34,17 @@ pipeline {
         }
         stage('Deploy Kubernetes') {
               steps {
+              sh 'pwd'
               sh 'sudo su -'
               sh 'chmod +x kube'
                sh 'cd /kube'
                script{
                try
                {
-               sh 'kubectl apply -f .'
+               sh 'ssh iid@192.168.146.237 kubectl apply -f .'
                }catch(error)
                {
-              sh 'kubectl create -f .'
+               sh 'ssh iid@192.168.146.237 kubectl create -f .'
                }
                }
               }
