@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:jdk-11.0.2.9-slim
+FROM  openjdk:17-jdk-slim-buster
 ENV PORT 8082
 COPY  target/*.jar /opt/app.jar
 WORKDIR /opt
