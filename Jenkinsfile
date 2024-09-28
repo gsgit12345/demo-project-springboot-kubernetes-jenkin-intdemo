@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Deploy Kubernetes') {
               steps {
-              sh 'sudo -S chmod +x kube'
+              sh 'chmod +x kube'
                sh 'cd /kube'
                script{
                try
