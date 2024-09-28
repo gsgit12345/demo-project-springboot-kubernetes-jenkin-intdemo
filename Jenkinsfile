@@ -34,8 +34,8 @@ pipeline {
         }
         stage('Deploy Kubernetes') {
               steps {
-
                sh 'cd /kube'
+               script{
                try
                {
                sh 'kubectl apply -f .'
@@ -43,9 +43,9 @@ pipeline {
                {
               sh 'kubectl create -f .'
                }
-
-                    }
-                }
+               }
+              }
+          }
      }
 }
 
