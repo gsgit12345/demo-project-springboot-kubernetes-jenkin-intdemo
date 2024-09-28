@@ -38,21 +38,20 @@ pipeline {
               sh 'ls -a'
                sh 'cd kube/'
                sh 'ls -a'
-   //  sshagent (credentials: ['CredSys']){
-  //  sh 'ssh scp -o StrictHostKeyChecking=no appdeployment.yaml  iid@192.168.146.237:/home/iid/kubeapp/'
        script{
            try{
                sh 'pwd'
-               sh 'kubectl apply -f appdeployment.yaml'
+               sh 'chmod +x changeTag.sh'
+               sh './changeTag.sh ${DOCKER_TAG}'
+               sh 'kubectl apply -f apppod.yaml'
                sh 'kubectl apply -f service.yaml'
            }catch(error)
               {
-               sh 'kubectl create -f appdeployment.yaml'
+               sh 'kubectl create -f apppod.yaml'
                sh 'kubectl apply -f service.yaml'
              }
            }
           }
-        // }
      }
     }
 }

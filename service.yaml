@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkindemo
+spec:
+  selector:
+    app: jenkindemo
+  ports:
+    - port: 82
+      targetPort: 8082
+  type: LoadBalancer
