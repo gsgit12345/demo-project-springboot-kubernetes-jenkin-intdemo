@@ -39,7 +39,6 @@ pipeline {
                sh 'cd kube/'
                sh 'ls -a'
      sshagent(['SystemCred']) {
-    // some block
     sh 'ssh scp -o StrictHostKeyChecking=no appdeployment.yaml  iid@192.168.146.237:/home/iid/kubeapp/'
        script{
            try{
@@ -53,6 +52,7 @@ pipeline {
              }
            }
           }
+         }
      }
 }
 
