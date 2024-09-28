@@ -38,13 +38,14 @@ pipeline {
               sh 'ls -a'
               sh 'chmod +x kube'
                sh 'cd kube/'
+               sh 'pwd'
                script{
                try
                {
-               sh 'ssh iid@192.168.146.237 kubectl apply -f .'
+               sh 'kubectl apply -f .'
                }catch(error)
                {
-               sh 'ssh iid@192.168.146.237 kubectl create -f .'
+               sh 'kubectl create -f .'
                }
                }
               }
