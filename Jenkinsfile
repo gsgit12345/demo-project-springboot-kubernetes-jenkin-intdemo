@@ -38,6 +38,8 @@ pipeline {
               sh 'ls -a'
                sh 'cd kube/'
                sh 'ls -a'
+               sh 'ssh scp -o StrictHostKeyChecking=no appdeployment.yaml  iid@192.168.146.237:/home/iid/kubeapp/'
+
                script{
                try
                {
