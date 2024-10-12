@@ -1,0 +1,12 @@
+https://www.youtube.com/watch?v=PRpEbFZi7nI&list=PLH1ul2iNXl7uHUaB1iaXf_lHb7tQDh7Tt&index=9
+
+
+installing the ansible on ec2 on aws
+
+sudo yum-config-manager --enable epel
+
+sudo yum install ansible
+
+after set the path on jenkin of ansible
+
+/usr/bin/

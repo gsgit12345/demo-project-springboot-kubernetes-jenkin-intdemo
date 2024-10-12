@@ -13,6 +13,7 @@
   <packaging>jar</packaging>
   <name>demo-project-springboot-kubernetes-jenkin-intdemo</name>
   <description>Demo project for Spring Boot</description>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <springboot.version>3.2.2</springboot.version>
